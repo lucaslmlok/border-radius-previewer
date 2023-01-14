@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "../app/store";
+import { useBorderRadiusString } from "../utils/hooks";
 import CopyButton from "./CopyButton";
 
 const CodePreview = () => {
-  const borderRadius = useSelector((state: RootState) => state.borderRadius);
+  const borderRadiusString = useBorderRadiusString();
 
-  const code = `border-radius: ${borderRadius.topLeft}% ${borderRadius.topRight}% ${borderRadius.bottomRight}% ${borderRadius.bottomLeft}%;`;
+  const code = `border-radius: ${borderRadiusString};`;
 
   return (
-    <div className="relative flex flex-col items-end rounded-lg bg-zinc-700 py-6 px-6 pt-12">
+    <div className="relative my-4 flex flex-col items-end rounded-xl bg-zinc-700 py-12 px-4 shadow-xl">
       <CopyButton text={code} />
       <pre>
         <code dangerouslySetInnerHTML={{ __html: code }} />

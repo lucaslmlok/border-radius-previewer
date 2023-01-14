@@ -1,16 +1,26 @@
 import { useSelector } from "react-redux";
+import ReactSlider from "react-slider";
 import type { RootState } from "../app/store";
+import { useBorderRadiusString } from "../utils/hooks";
+import Slider from "./Slider";
 
 const BoxPreview = () => {
-  const borderRadius = useSelector((state: RootState) => state.borderRadius);
+  const borderRadiusString = useBorderRadiusString();
 
   return (
-    <div
-      className="my-5 aspect-square w-full max-w-[12rem] bg-gradient-to-tr from-cyan-500 to-purple-500"
-      style={{
-        borderRadius: `${borderRadius.topLeft}% ${borderRadius.topRight}% ${borderRadius.bottomRight}% ${borderRadius.bottomLeft}%`,
-      }}
-    ></div>
+    <div className="relative my-5 aspect-square w-full max-w-[16rem] border-2 border-dashed">
+      <div
+        className="h-full w-full bg-gradient-to-tr from-teal-500 to-purple-500"
+        style={{
+          borderRadius: borderRadiusString,
+        }}
+      ></div>
+
+      <Slider direction="top" />
+      <Slider direction="bottom" />
+      <Slider direction="left" />
+      <Slider direction="right" />
+    </div>
   );
 };
 

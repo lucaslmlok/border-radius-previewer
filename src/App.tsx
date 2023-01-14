@@ -5,21 +5,13 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-800 text-white">
-      <div className="container flex max-w-xl flex-col items-center py-4">
-        <h1 className="font my-6 text-3xl font-extrabold">
+    <div className="bg min-h-screen text-white">
+      <div className="container flex flex-col items-center">
+        <h1 className="font my-6 text-5xl font-black">
           Border-radius Previewer
         </h1>
         <p>Adjust the border-radius of the box below:</p>
-        <div className="flex w-full flex-col items-center gap-x-4 md:flex-row">
-          <BoxPreview />
-          <div className="my-2 grid w-full grid-cols-2 gap-6">
-            <CornerField corner="top-left" />
-            <CornerField corner="top-right" />
-            <CornerField corner="bottom-left" />
-            <CornerField corner="bottom-right" />
-          </div>
-        </div>
+        <BoxPreview />
         <CodePreview />
         <Footer />
       </div>

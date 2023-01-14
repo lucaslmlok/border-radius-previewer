@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import borderRadiusReducer from "../features/border-radius/borderRadiusSlice";
+import borderRadiusReducer from "./borderRadiusSlice";
 
 export const store = configureStore({
   reducer: {

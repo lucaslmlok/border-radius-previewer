@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../app/store";
-import { set } from "../features/border-radius/borderRadiusSlice";
+import { set } from "../app/borderRadiusSlice";
 import { kebabToCamel } from "../utils/helpers";
 import type { Corner, CornerVar } from "../utils/types";
 

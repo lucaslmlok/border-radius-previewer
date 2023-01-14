@@ -19,7 +19,7 @@ function CopyButton({ text }: Props) {
 
   return (
     <button
-      className={`absolute top-2 right-2 flex items-center justify-center rounded border-2 border-zinc-500 bg-zinc-600 p-1.5 leading-none shadow transition-all duration-100 hover:border-white hover:bg-zinc-500 ${
+      className={`absolute top-2 right-2 flex items-center justify-center rounded border-2 border-zinc-500 bg-zinc-600 p-1.5 leading-none shadow-lg transition-all duration-100 hover:border-white hover:bg-zinc-500 ${
         isCopied ? "w-16" : "w-8"
       }`}
       title="Copy"
