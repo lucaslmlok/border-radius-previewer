@@ -6,9 +6,9 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg min-h-screen bg-cyan-900 text-white">
+    <div className="bg min-h-screen bg-violet-900 text-white">
       <Helmet>
-        <meta name="theme-color" content={colors.cyan[900]}></meta>
+        <meta name="theme-color" content={colors.violet[900]}></meta>
       </Helmet>
 
       <div className="container flex flex-col items-center">
