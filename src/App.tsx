@@ -1,5 +1,4 @@
 import BoxPreview from "./components/BoxPreview";
-import CornerField from "./components/CornerField";
 import CodePreview from "./components/CodePreview";
 import Footer from "./components/Footer";
 

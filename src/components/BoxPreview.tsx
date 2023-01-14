@@ -1,6 +1,3 @@
-import { useSelector } from "react-redux";
-import ReactSlider from "react-slider";
-import type { RootState } from "../app/store";
 import { useBorderRadiusString } from "../utils/hooks";
 import Slider from "./Slider";
 

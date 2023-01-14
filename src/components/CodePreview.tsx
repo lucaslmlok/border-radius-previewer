@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import type { RootState } from "../app/store";
 import { useBorderRadiusString } from "../utils/hooks";
 import CopyButton from "./CopyButton";
 
