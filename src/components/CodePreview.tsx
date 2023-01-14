@@ -9,7 +9,7 @@ const CodePreview = () => {
   return (
     <div className="relative my-4 flex flex-col items-end rounded-xl bg-zinc-700 py-12 px-4 shadow-xl">
       <CopyButton text={code} />
-      <pre>
+      <pre className="whitespace-normal">
         <code dangerouslySetInnerHTML={{ __html: code }} />
       </pre>
     </div>

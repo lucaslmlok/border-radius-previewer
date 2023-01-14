@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="bg min-h-screen text-white">
       <div className="container flex flex-col items-center">
-        <h1 className="font my-6 text-5xl font-black">
+        <h1 className="my-6 text-center text-4xl font-black md:text-5xl">
           Border-radius Previewer
         </h1>
         <p>Adjust the border-radius of the box below:</p>
