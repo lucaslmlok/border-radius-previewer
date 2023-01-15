@@ -6,17 +6,17 @@ const BoxPreview = () => {
 
   return (
     <div className="relative my-5 aspect-square w-full max-w-[16rem] border-2 border-dashed">
-      <div
+      {/* <div
         className="h-full w-full bg-gradient-to-tr from-teal-500 to-purple-500"
         style={{
           borderRadius: borderRadiusString,
         }}
-      ></div>
+      ></div> */}
 
       <Slider direction="top" />
-      <Slider direction="bottom" />
+      {/* <Slider direction="bottom" />
       <Slider direction="left" />
-      <Slider direction="right" />
+      <Slider direction="right" /> */}
     </div>
   );
 };
