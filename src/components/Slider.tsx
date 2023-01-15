@@ -17,23 +17,28 @@ const Slider = ({ direction }: SliderProps) => {
   const borderRadius = useSelector((state: RootState) => state.borderRadius);
   const dispatch = useDispatch();
 
-  const handleChange = (e: MouseEvent) => {
+  const handleChange = (e: MouseEvent | TouchEvent) => {
     if (containerRef.current && e.target instanceof HTMLElement) {
       const rect = containerRef.current.getBoundingClientRect();
+      const x = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX;
       const newValue =
-        (Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width) * 100;
+        (Math.min(Math.max(0, x - rect.x), rect.width) / rect.width) * 100;
       dispatch(setBorderRadius({ ...borderRadius, [direction]: newValue }));
     }
   };
 
-  const handleMouseDown = () => {
+  const handleDown = () => {
     window.addEventListener("mousemove", handleChange);
-    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchmove", handleChange);
+    window.addEventListener("mouseup", handleUp);
+    window.addEventListener("touchend", handleUp);
   };
 
-  const handleMouseUp = () => {
+  const handleUp = () => {
     window.removeEventListener("mousemove", handleChange);
-    window.removeEventListener("mouseup", handleMouseUp);
+    window.removeEventListener("touchmove", handleChange);
+    window.removeEventListener("mouseup", handleUp);
+    window.removeEventListener("touchend", handleUp);
   };
 
   const thumbStyle = {
@@ -52,7 +57,8 @@ const Slider = ({ direction }: SliderProps) => {
         direction === "bottom" ? "bottom-0" : "top-0",
         direction === "right" ? "right-0" : "left-0"
       )}
-      onMouseDown={handleMouseDown}
+      onMouseDown={handleDown}
+      onTouchStart={handleDown}
     >
       <button
         className={clsx(
